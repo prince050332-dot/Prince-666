@@ -1,28 +1,28 @@
 {
-  "app_name": "Prince Studio",
+  "app_name": "Pulse Studio",
   "version": "1.5.0",
   "tag": "v1.5.0",
-  "released_at": "2026-11-26T12:49:23+07:00",
-  "notes": "- เปิดตัว Prince Studio (Patch Launcher สไตล์เกมออนไลน์ พร้อมวิดีโอพื้นหลัง 5 คลิป + เพลง BGM)\n- รองรับโพสต์ Facebook Reels (อัปโหลด 3 ขั้นตอน + ตั้งเวลาสูงสุด 29 วัน)\n- เพิ่มระบบ Keyword Auto-Reply ตอบคอมเมนต์อัตโนมัติ และ Post Presets\n- แก้ไขการดึงสถิติ Reach & Impressions (รองรับ read_insights + เมทริกซ์ใหม่)\n- เพิ่มระบบ Auto-Backup ฐานข้อมูล 7 วัน + Restore DB",
+  "released_at": "2026-11-26T13:00:12+07:00",
+  "notes": "- เปิดตัว Pulse Studio (Patch Launcher สไตล์เกมออนไลน์ พร้อมวิดีโอพื้นหลัง 5 คลิป + เพลง BGM)\n- รองรับโพสต์ Facebook Reels (อัปโหลด 3 ขั้นตอน + ตั้งเวลาสูงสุด 29 วัน)\n- เพิ่มระบบ Keyword Auto-Reply ตอบคอมเมนต์อัตโนมัติ และ Post Presets\n- แก้ไขการดึงสถิติ Reach & Impressions (รองรับ read_insights + เมทริกซ์ใหม่)\n- เพิ่มระบบ Auto-Backup ฐานข้อมูล 7 วัน + Restore DB",
   "force_update": false,
   "files": [
     {
       "name": "SocialManager.exe",
       "url": "https://github.com/prince050332-dot/Prince-666/releases/download/v1.5.0/SocialManager.exe",
-      "sha256": "23edbae2c5877c856d79df72ee426a262f6be9b871ca3bec15874322f41f9125",
-      "size": 51379521
+      "sha256": "d518fcef74fbdd64f7e3368c0b9c4777b19b30b322fde3ed6fba23975249742c",
+      "size": 51380145
     },
     {
       "name": "คู่มือการใช้งาน.txt",
       "url": "https://github.com/prince050332-dot/Prince-666/releases/download/v1.5.0/USER_MANUAL_TH.txt",
-      "sha256": "1240e134fc0703fc37bea77c3603c172c15ef1ca5d98b49acaf4ad0a9e8f9fae",
-      "size": 58767
+      "sha256": "ed1fc61439accbf18d6779192ea613c8cb1199adb288df5fafb78f6f245778e7",
+      "size": 58764
     }
   ],
   "launcher": {
     "name": "SocialManagerLauncher.exe",
     "url": "https://github.com/prince050332-dot/Prince-666/releases/download/v1.5.0/SocialManagerLauncher.exe",
-    "sha256": "e9a29e08d07ef81a53c5b39e47912b9be5b73ba4d291b4c896d6516a7f358775",
-    "size": 102194413
+    "sha256": "5186982c4bcc4489f34d46b8ef3ebbaa241083f9352fa06776d2d32e2ee99ee0",
+    "size": 102194095
   }
 }

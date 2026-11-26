@@ -1139,7 +1139,7 @@ def validate_sqlite_backup_file(src_path: str | Path) -> Path:
             ).fetchone()
             if not tbl_row:
                 raise ValueError(
-                    "ไฟล์ SQLite นี้ไม่ใช่ฐานข้อมูลของโปรแกรม Prince Studio (ไม่พบตาราง accounts)"
+                    "ไฟล์ SQLite นี้ไม่ใช่ฐานข้อมูลของโปรแกรม Pulse Studio (ไม่พบตาราง accounts)"
                 )
         except sqlite3.DatabaseError as exc:
             raise ValueError(f"ไฟล์ฐานข้อมูลสำรองเสียหาย: {exc}") from exc

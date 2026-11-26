@@ -1,4 +1,4 @@
-"""HoYoPlay-inspired Game-Style Patch Launcher for Prince Studio."""
+"""HoYoPlay-inspired Game-Style Patch Launcher for Pulse Studio."""
 from __future__ import annotations
 
 from bisect import bisect_right

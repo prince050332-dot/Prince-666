@@ -391,7 +391,7 @@ def _wait_for_callback(
             self.end_headers()
             body = (
                 "<!doctype html><html><head><meta charset='utf-8'>"
-                "<title>Prince Studio</title></head>"
+                "<title>Pulse Studio</title></head>"
                 "<body style='font-family:sans-serif;text-align:center;padding:48px'>"
                 f"<h2>{msg}</h2></body></html>"
             )
