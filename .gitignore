@@ -1,0 +1,30 @@
+# Python / Virtualenv
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# PyInstaller build outputs & packaged releases (uploaded to GitHub Releases instead of Git)
+build/
+dist/
+release_out/
+
+# Local databases, secrets, logs & runtime configs
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.env
+.env.*
+secrets/
+*.log
+launcher_config.json
+local_version.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

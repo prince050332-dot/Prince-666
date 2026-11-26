@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>โพสต์ดิ!! รอไร — ดาวน์โหลด &amp; อัปเดตแพตช์ล่าสุด</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: rgba(15, 23, 42, 0.86);
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #2563eb;
+      --accent2: #06b6d4;
+      --green: #16a34a;
+      --green-hover: #15803d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Prompt", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.28), transparent 42%),
+        radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.22), transparent 38%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 32px 18px 64px;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px 30px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(12px);
+    }
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .logo-box {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: grid; place-items: center;
+      font-size: 26px; font-weight: 700; color: #fff;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    }
+    .brand h1 { font-size: 1.75rem; line-height: 1.2; }
+    .brand p { color: var(--muted); font-size: 0.95rem; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(37, 99, 235, 0.16);
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      font-size: 0.9rem; font-weight: 600; color: #93c5fd;
+    }
+    .lead {
+      color: #cbd5e1;
+      font-size: 1.03rem;
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+    .cta-row {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      padding: 13px 22px; border-radius: 12px; transition: 0.18s ease;
+      cursor: pointer; border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green), #22c55e);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(22, 163, 74, 0.32);
+    }
+    .btn-primary:hover { filter: brightness(1.07); transform: translateY(-1px); }
+    .btn-secondary {
+      background: rgba(37, 99, 235, 0.18);
+      border-color: rgba(59, 130, 246, 0.45);
+      color: #dbeafe;
+    }
+    .btn-secondary:hover { background: rgba(37, 99, 235, 0.3); }
+    .btn-ghost {
+      background: rgba(148, 163, 184, 0.1);
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-ghost:hover { background: rgba(148, 163, 184, 0.2); }
+    .btn[aria-disabled="true"] {
+      opacity: 0.5; pointer-events: none;
+    }
+    .meta-line { color: var(--muted); font-size: 0.88rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .card h2 { font-size: 1.12rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .notes-pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      color: #e2e8f0;
+      font-size: 0.94rem;
+      background: rgba(2, 6, 23, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      min-height: 120px;
+    }
+    .file-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .file-item {
+      background: rgba(2, 6, 23, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .file-top { display: flex; justify-content: space-between; gap: 8px; font-weight: 600; font-size: 0.95rem; }
+    .file-sha {
+      margin-top: 4px; font-family: Consolas, monospace; font-size: 0.76rem;
+      color: var(--muted); word-break: break-all;
+    }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 12px; }
+    .step-box {
+      background: rgba(2, 6, 23, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .step-num {
+      display: inline-block; width: 26px; height: 26px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; text-align: center; font-weight: 700; font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+    .step-box h3 { font-size: 0.98rem; margin-bottom: 4px; }
+    .step-box p { color: var(--muted); font-size: 0.88rem; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="logo-box">P</div>
+          <div>
+            <h1>โพสต์ดิ!! รอไร</h1>
+            <p>Facebook Page Studio • ระบบจัดการหลายเพจ ตั้งเวลา โพสต์ Reels และ RT Dashboard</p>
+          </div>
+        </div>
+        <span class="pill" id="versionPill">กำลังโหลดเวอร์ชันล่าสุด…</span>
+      </div>
+
+      <p class="lead">
+        ดาวน์โหลดตัวเปิดโปรแกรม <strong>Patch Launcher (SocialManagerLauncher.exe)</strong> เพียงครั้งเดียว
+        ครั้งต่อไปเมื่อมีแพตช์ใหม่แค่เปิด Launcher แล้วกดอัปเดตได้ทันทีเหมือนเกมออนไลน์ (ข้อมูลเพจและฐานข้อมูลเดิมอยู่ครบ 100%)
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" id="btnDownloadLauncher" href="#" aria-disabled="true">
+          ⬇ ดาวน์โหลด Patch Launcher (แนะนำ)
+        </a>
+        <a class="btn btn-secondary" id="btnDownloadExe" href="#" aria-disabled="true">
+          💻 ดาวน์โหลด SocialManager.exe โดยตรง
+        </a>
+        <a class="btn btn-ghost" id="btnDownloadManual" href="#" aria-disabled="true">
+          📖 คู่มือการใช้งาน (.txt)
+        </a>
+      </div>
+      <div class="meta-line" id="releaseMeta">รองรับ Windows 10 / 11 (64-bit) • ตรวจสอบไฟล์ด้วย SHA-256 อัตโนมัติ</div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>📰 บันทึกการอัปเดตล่าสุด (Patch Notes)</h2>
+        <pre class="notes-pre" id="patchNotes">กำลังตรวจสอบข้อมูลแพตช์ล่าสุด…</pre>
+      </section>
+
+      <section class="card">
+        <h2>🔒 ไฟล์ในแพตช์ &amp; รหัสยืนยัน SHA-256</h2>
+        <ul class="file-list" id="fileList">
+          <li class="file-item">กำลังโหลดรายการไฟล์…</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top: 18px;">
+      <h2>🚀 วิธีติดตั้งและอัปเดตใน 3 ขั้นตอน</h2>
+      <div class="steps">
+        <div class="step-box">
+          <div class="step-num">1</div>
+          <h3>ดาวน์โหลด Patch Launcher</h3>
+          <p>กดดาวน์โหลด <code>SocialManagerLauncher.exe</code> แล้ววางไว้ในโฟลเดอร์ที่ต้องการใช้งาน</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">2</div>
+          <h3>กดอัปเดตแพตช์</h3>
+          <p>เปิด Launcher ระบบจะเช็กเวอร์ชันล่าสุด ดาวน์โหลดไฟล์และตรวจ SHA-256 ให้อัตโนมัติ</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">3</div>
+          <h3>กดเข้าใช้งานโปรแกรม</h3>
+          <p>กดปุ่มสีเขียว "เข้าใช้งานโปรแกรม" เพื่อเปิดใช้งานได้ทันที ข้อมูลเพจและคิวเดิมไม่สูญหาย</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      โพสต์ดิ!! รอไร — Facebook Page Studio • แจกจ่ายแพตช์ผ่าน GitHub Releases
+    </footer>
+  </div>
+
+  <script>
+    // ตั้งค่า GitHub Repository ของคุณตรงนี้ (เช่น "myname/social-manager")
+    // หรือส่งผ่าน URL query เช่น index.html?repo=myname/social-manager
+    const DEFAULT_GITHUB_REPO = "prince050332-dot/Prince-666";
+
+    function safeHttpsUrl(raw) {
+      if (!raw || typeof raw !== "string") return "";
+      try {
+        const u = new URL(raw);
+        return u.protocol === "https:" ? u.toString() : "";
+      } catch (_e) {
+        return "";
+      }
+    }
+
+    function formatBytes(bytes) {
+      const n = Number(bytes) || 0;
+      if (n <= 0) return "";
+      const units = ["B", "KB", "MB", "GB"];
+      let v = n, i = 0;
+      while (v >= 1024 && i < units.length - 1) { v /= 1024; i++; }
+      return `${i === 0 ? v : v.toFixed(1)} ${units[i]}`;
+    }
+
+    function setButton(id, url, label) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const safe = safeHttpsUrl(url);
+      if (safe) {
+        el.href = safe;
+        el.removeAttribute("aria-disabled");
+        if (label) el.textContent = label;
+      } else {
+        el.href = "#";
+        el.setAttribute("aria-disabled", "true");
+      }
+    }
+
+    function renderManifest(mf) {
+      const ver = String(mf.version || "").replace(/^v/i, "") || "-";
+      document.getElementById("versionPill").textContent = `เวอร์ชันล่าสุด v${ver}`;
+
+      const dateStr = mf.released_at ? new Date(mf.released_at).toLocaleString("th-TH") : "";
+      document.getElementById("releaseMeta").textContent =
+        `รองรับ Windows 10 / 11 (64-bit) • ตรวจสอบไฟล์ด้วย SHA-256 อัตโนมัติ` +
+        (dateStr ? ` • อัปเดตเมื่อ ${dateStr}` : "");
+
+      document.getElementById("patchNotes").textContent =
+        (mf.notes || "ไม่มีบันทึกรายละเอียดแพตช์เพิ่มเติม").trim();
+
+      const files = Array.isArray(mf.files) ? mf.files : [];
+      const launcher = mf.launcher || files.find(f => /launcher\.exe$/i.test(f.name || ""));
+      const mainExe = files.find(f => /^socialmanager\.exe$/i.test(f.name || "")) || files.find(f => /\.exe$/i.test(f.name || ""));
+      const manual = files.find(f => /\.txt$/i.test(f.name || ""));
+
+      setButton(
+        "btnDownloadLauncher",
+        launcher ? launcher.url : "",
+        launcher ? `⬇ ดาวน์โหลด Patch Launcher (${formatBytes(launcher.size) || "แนะนำ"})` : ""
+      );
+      setButton(
+        "btnDownloadExe",
+        mainExe ? mainExe.url : "",
+        mainExe ? `💻 ดาวน์โหลด SocialManager.exe (${formatBytes(mainExe.size) || "ตรง"})` : ""
+      );
+      setButton(
+        "btnDownloadManual",
+        manual ? manual.url : "",
+        manual ? "📖 ดาวน์โหลดคู่มือการใช้งาน (.txt)" : ""
+      );
+
+      const listEl = document.getElementById("fileList");
+      listEl.textContent = "";
+      const allItems = launcher ? [launcher, ...files.filter(f => f.name !== launcher.name)] : files;
+      if (!allItems.length) {
+        const li = document.createElement("li");
+        li.className = "file-item";
+        li.textContent = "ยังไม่มีรายการไฟล์แพตช์";
+        listEl.appendChild(li);
+        return;
+      }
+      for (const f of allItems) {
+        const li = document.createElement("li");
+        li.className = "file-item";
+
+        const top = document.createElement("div");
+        top.className = "file-top";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = f.name || "unknown";
+        const sizeSpan = document.createElement("span");
+        sizeSpan.textContent = formatBytes(f.size);
+        top.appendChild(nameSpan);
+        top.appendChild(sizeSpan);
+        li.appendChild(top);
+
+        if (f.sha256) {
+          const sha = document.createElement("div");
+          sha.className = "file-sha";
+          sha.textContent = `SHA-256: ${f.sha256}`;
+          li.appendChild(sha);
+        }
+        listEl.appendChild(li);
+      }
+    }
+
+    async function loadLatestRelease() {
+      const qs = new URLSearchParams(window.location.search);
+      const repoParam = (qs.get("repo") || DEFAULT_GITHUB_REPO || "").trim();
+      const repoOk = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repoParam);
+
+      // 1) Try local version.json placed alongside index.html (ideal for GitHub Pages)
+      try {
+        const rLocal = await fetch("./version.json", { cache: "no-store" });
+        if (rLocal.ok) {
+          const mf = await rLocal.json();
+          if (mf && mf.version) {
+            renderManifest(mf);
+            return;
+          }
+        }
+      } catch (_e) {
+        // Fallback to GitHub Releases API below
+      }
+
+      // 2) Try GitHub Releases API if repo is configured
+      if (repoOk) {
+        try {
+          const rApi = await fetch(`https://api.github.com/repos/${repoParam}/releases/latest`, {
+            headers: { "Accept": "application/vnd.github+json" },
+            cache: "no-store",
+          });
+          if (rApi.ok) {
+            const rel = await rApi.json();
+            const assets = Array.isArray(rel.assets) ? rel.assets : [];
+            const files = assets
+              .filter(a => a && a.name && a.name.toLowerCase() !== "version.json")
+              .map(a => ({
+                name: a.name,
+                url: a.browser_download_url || "",
+                size: a.size || 0,
+                sha256: (a.digest || "").replace(/^sha256:/i, ""),
+              }));
+            renderManifest({
+              version: rel.tag_name || "",
+              released_at: rel.published_at || "",
+              notes: rel.body || "",
+              files,
+            });
+            return;
+          }
+        } catch (_e) {
+          // Handled cleanly below
+        }
+      }
+
+      document.getElementById("versionPill").textContent = "รอตั้งค่า GitHub Repository";
+      document.getElementById("patchNotes").textContent =
+        "ยังไม่ได้เชื่อมโยงไฟล์ version.json หรือ GitHub Repository\n\n" +
+        "วิธีเปิดใช้งานหน้าเว็บนี้:\n" +
+        "1. รัน build_release.py --repo <owner>/<repo> เพื่อสร้างไฟล์ release_web/version.json\n" +
+        "2. หรือตั้งค่าตัวแปร DEFAULT_GITHUB_REPO ในไฟล์ index.html แล้วอัปขึ้น GitHub Pages";
+      const listEl = document.getElementById("fileList");
+      listEl.textContent = "";
+      const li = document.createElement("li");
+      li.className = "file-item";
+      li.textContent = "ยังไม่มีข้อมูลแพตช์ (อัปโหลด version.json คู่กับหน้าเว็บนี้หรือระบุ ?repo=owner/repo)";
+      listEl.appendChild(li);
+    }
+
+    loadLatestRelease();
+  </script>
+</body>
+</html>
