@@ -1,4 +1,4 @@
-"""HoYoPlay-inspired Game-Style Patch Launcher for โพสต์ดิ!! รอไร (Social Manager)."""
+"""HoYoPlay-inspired Game-Style Patch Launcher for Prince Studio."""
 from __future__ import annotations
 
 from bisect import bisect_right
@@ -796,7 +796,7 @@ class LauncherWindow(QMainWindow):
         self.lbl_version_pill.setMaximumWidth(330)
         left_col.addWidget(self.lbl_version_pill)
 
-        self.lbl_hero_title = QLabel("ศูนย์อัปเดตแพตช์ โพสต์ดิ!! รอไร")
+        self.lbl_hero_title = QLabel(f"ศูนย์อัปเดตแพตช์ {APP_NAME}")
         self.lbl_hero_title.setStyleSheet(
             "color: #FFFFFF; font-size: 26px; font-weight: 700; background: transparent;"
         )

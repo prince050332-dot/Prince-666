@@ -1,4 +1,4 @@
-"""One-click GitHub Releases patch packager for โพสต์ดิ!! รอไร (Social Manager).
+"""One-click GitHub Releases patch packager for Prince Studio.
 
 Usage examples:
     python build_release.py --repo myname/social-manager --notes "- เพิ่มโหมด Reels\n- แก้บั๊ก Reach/Impressions"

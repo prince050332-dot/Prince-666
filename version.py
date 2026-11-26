@@ -1,6 +1,6 @@
 """Single source of truth for Social Manager version metadata."""
 
-APP_NAME = "โพสต์ดิ!! รอไร"
+APP_NAME = "Prince Studio"
 APP_VERSION = "1.5.0"
 LAUNCHER_VERSION = "1.0.0"
 # Developer-configured default patch manifest URL (GitHub Releases version.json).
